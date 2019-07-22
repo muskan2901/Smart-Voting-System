@@ -4,10 +4,10 @@ Simple web app using django and open cv
 Smart voting System uses Facial Recognition along side traditionl passwords which provides an additional security. This Web App is designed to serve the needs of organisation and institutions. 
 
 # Software requirements
->Django
->Python
->open CV
->pip
+>Django,
+>Python,
+>open CV,
+>pip,
 >pillow
 
 # Database
