@@ -1,0 +1,142 @@
+<!doctype html>
+<html>
+<head>
+    {% load static %}
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, iniital-scale=1;">
+<title>Smart Voting System</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<link rel="stylesheet" type="text/css" href="{% static 'Vote/home.css' %}">
+<style>
+footer .glyphicon {
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: #f4511e;
+}
+.navbar-brand{
+  float: none;
+</style>
+</head>
+<body>
+   <nav class="navbar navbar-default navbar-fixed-top">
+     <div class="container-fluid">
+       <div class=" navbar-header">
+           <img src="{% static 'Vote/2018-06-11.png' %}" alt="some text" width=150 height=50>
+           <a class="navbar-brand" href="#">Smart Voting System</a>
+       </div>
+      <ul class="nav navbar-nav">
+       <li class="active"><a href="#">Home</a></li>
+       <li><a href="{% url 'Vote:face_index' %}">Add Facedata</a></li>
+       <li><a href="{% url 'Vote:vote' %}">Vote</a></li>
+       <li><a href="{% url 'Vote:results' %}">Results</a> </li>
+       <li><a href="/admin">Admin</a></li>
+	   <li><a href ="{% url 'Vote:about' %}">About</a></li>
+	   <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">English
+        <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="{% url 'Vote:home_hindi' %}">Hindi</a></li>
+        </ul>
+      </li>
+       </ul>
+
+        {% if user.is_authenticated %}
+       <ul class="nav navbar-nav navbar-right">
+       <li><a href="{% url 'Vote:logout' %}"><span class="glyphicon glyphicon-log-in"></span> Log Out</a></li>
+       </ul>
+         {% else %}
+         <ul class="nav navbar-nav navbar-right">
+        <li><a href="{% url 'Vote:login' %}"><span class="glyphicon glyphicon-log-in"></span> Log In</a></li>
+        </ul>
+         {% endif %}
+     </div>
+    </nav>
+   <div class="page-header bg-6">
+   <h1 align="center" ><strong>Smart Voting System </strong></h1>
+ <h3 align="center">A fast and efficient way to vote sitting at home.</h3>
+   </div>
+   <!----row column---->
+   <div class="row">
+     <div class="col-lg-4" class="slideanim"><img src="{% static 'Vote/smart-voting-system.jpg' %}" class="img-thumbnail" ></div>
+	 <div class="col-lg-8">
+   <h4 align="justify">
+      <strong>Smart voting System</strong> uses Facial Recognition along side traditionl passwords which provides an additional security.
+       This Web App is designed to serve the needs of organisation and institutions.
+       </br>
+       </br>
+       <strong>Smart Voting System </strong>doesn’t limit the number of polls you can create. Unlike the vast majority of voting websites you can continue using the free service as often as you’d like.
+        It’s a quick and easy way to organise elections for an organisation or an institution and let your colleagues or CR's cast their vote.
+       </br></br> <strong>Contact the Admin </strong> to get your Login Credentials.
+        Once you get the Login Credentials you can add your Face Data and you are ready to vote.
+      </h4>
+   </div>
+	</div>
+    <div class="row bg-5" >
+     <div class="col-lg-8" class="slideanim">
+     <h2>   <strong>What makes this web app so special?</strong></h2>
+          <h4 align="justify">
+       <strong>  Smart Voting System</strong> has a very minimalistic, user-friendly design.
+         </br>There’s no hassle, no fuss, and no lengthy steps asking you to fill out information. In fact, you don’t even have to sign up for an account just get your login creadentials from the admin of your organisation. This voting website doesn’t need your mobile number, doesn’t save your email address for sending newsletters and would never sell your contact information to third party advertisers!!
+
+     	   </h4>
+     </div>
+	    <div class="col-lg-4"><img src="{% static 'Vote/e_vote.jpg' %}" class="img-thumbnail" ></div>
+	  </div>
+	  </div>
+	  <div class="row">
+		<div class="col-lg-12" align="center">
+    <h2>Voting Just a <strong>Click</strong> Away</h2>
+</br>
+        <a href="{% url 'Vote:vote' %}"><button type="button" class="btn1">Vote</button><br><br></a>
+		</div>
+	   </div>
+<script>
+$(document).ready(function(){
+    $('[data-toggle="popover"]').popover();
+});
+</script>
+	<div class="container-fluid bg-4">
+  <h2 class="text-center">Get In Touch</h2>
+  </br>
+  <div class="row row2">
+    <div class="col-sm-5">
+      <p><strong>Contact Us</strong> and we'll get back to you within 24 hours.</p>
+      <p><span class="glyphicon glyphicon-map-marker"></span>  Sikkim Manipal Institute of Technology, Majitar</p>
+      <p><span class="glyphicon glyphicon-phone"></span> +91-8972138347</p>
+      <p><span class="glyphicon glyphicon-envelope"></span> srivastavaanurag79@gmail.com</p>
+    </div>
+    <div class="col-sm-7">
+      <div class="row row2">
+        <div class="col-sm-6 form-group">
+          <input class="form-control" id="name" name="name" placeholder="Name" type="text" required>
+        </div>
+        <div class="col-sm-6 form-group">
+          <input class="form-control" id="email" name="email" placeholder="Email" type="email" required>
+        </div>
+      </div>
+      <textarea class="form-control" id="comments" name="comments" placeholder="Comment" rows="5"></textarea><br>
+      <div class="row row2">
+        <div class="col-sm-12 form-group">
+          <button class="btn btn-default pull-right" type="submit">Send</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<footer class="container-fluid  bg-4 text-center">
+  <a href="#myPage" title="To Top">
+    <span class="glyphicon glyphicon-chevron-up"></span>
+  </a>
+  <p>&copy; Copyright <strong>Smart Voting System Team</strong>. All Rights Reserved</p>
+  <p>MADE WITH SKILL! NOT LOVE.</a></p>
+</footer>
+
+</div>
+</body>
+</html>

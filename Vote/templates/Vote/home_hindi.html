@@ -1,0 +1,147 @@
+<!doctype html>
+<html>
+<head>
+    {% load static %}
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, iniital-scale=1;">
+<title>स्मार्ट वोटिंग सिस्टम</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<link rel="stylesheet" type="text/css" href="{% static 'Vote/home.css' %}">
+<style>
+footer .glyphicon {
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: #f4511e;
+}
+.navbar-brand{
+  float: none;
+</style>
+</head>
+<body>
+   <nav class="navbar navbar-default navbar-fixed-top">
+     <div class="container-fluid">
+       <div class=" navbar-header">
+           <img src="{% static 'Vote/2018-06-11.png' %}" alt="some text" width=150 height=50>
+           <a class="navbar-brand" href="#">स्मार्ट वोटिंग सिस्टम</a>
+       </div>
+      <ul class="nav navbar-nav">
+       <li class="active"><a href="#">होम</a></li>
+       <li><a href="{% url 'Vote:face_index' %}">फेस डेटा जोड़ें</a></li>
+       <li><a href="{% url 'Vote:vote' %}">वोट</a></li>
+       <li><a href="{% url 'Vote:results' %}">परिणाम</a> </li>
+       <li><a href="/admin">व्यवस्थापक</a></li>
+	   <li><a href ="{% url 'Vote:about' %}">बारे में</a></li>
+	   <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">हिंदी
+        <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="{% url 'Vote:home' %}">English</a></li>
+
+        </ul>
+      </li>
+       </ul>
+
+        {% if user.is_authenticated %}
+       <ul class="nav navbar-nav navbar-right">
+       <li><a href="{% url 'Vote:logout' %}"><span class="glyphicon glyphicon-log-in"></span> Log Out</a></li>
+       </ul>
+         {% else %}
+         <ul class="nav navbar-nav navbar-right">
+        <li><a href="{% url 'Vote:login' %}"><span class="glyphicon glyphicon-log-in"></span>लॉग इन</a></li>
+        </ul>
+         {% endif %}
+     </div>
+    </nav>
+   <div class="page-header bg-6">
+   <h1 align="center" ><strong>स्मार्ट वोटिंग सिस्टम</strong></h1>
+ <h3 align="center">घर बैठे वोट करने का तेज़ और कुशल तरीका।</h3>
+   </div>
+   <!----row column---->
+   <div class="row">
+     <div class="col-lg-4" class="slideanim"><img src="{% static 'Vote/smart-voting-system.jpg' %}" class="img-thumbnail" ></div>
+	 <div class="col-lg-8">
+   <h4 align="justify">
+      <strong>स्मार्ट वोटिंग सिस्टम</strong> पारंपरिक पासवर्ड के साथ-साथ चेहरे की पहचान का उपयोग करता है जो एक अतिरिक्त सुरक्षा प्रदान करता है।
+       यह वेब ऐप संगठन और संस्थानों की जरूरतों को पूरा करने के लिए बनाया गया है।
+       </br>
+       </br>
+       <strong>स्मार्ट वोटिंग सिस्टम</strong> आपके द्वारा बनाए जाने वाले चुनावों की संख्या को सीमित नहीं करता है। अधिकांश मतदान वेबसाइटों के विपरीत, आप जितनी बार चाहें उतनी बार मुफ्त सेवा का उपयोग जारी रख सकते हैं।
+        किसी संगठन या संस्थान के लिए चुनावों का आयोजन करना और अपने सहयोगियों या सीआर को अपना वोट देने का एक त्वरित और आसान तरीका है।
+       </br></br> <strong>व्यवस्थापक से संपर्क करें </strong>अपने लॉगिन क्रेडेंशियल प्राप्त करने के लिए।
+      एक बार जब आप लॉगिन क्रेडेंशियल प्राप्त करते हैं तो आप अपना चेहरा डेटा जोड़ सकते हैं और आप वोट करने के लिए तैयार हैं।
+      </h4>
+     </div>
+	</div>
+    <div class="row bg-5" >
+     <div class="col-lg-8" class="slideanim">
+     <h2>   <strong>इस वेब ऐप को क्या खास बनाता है?</strong></h2>
+          <h4 align="justify">
+       <strong> स्मार्ट वोटिंग सिस्टम</strong> एक बहुत ही न्यूनतर, उपयोगकर्ता के अनुकूल डिजाइन है।
+         </br>कोई झंझट नहीं, कोई उपद्रव नहीं है, और कोई लंबा कदम नहीं है जिससे आप जानकारी भर सकें। वास्तव में, आपको अपने खाते के लिए साइन अप करने की ज़रूरत नहीं है, बस अपने संगठन के व्यवस्थापक से अपनी लॉगिन creadentials प्राप्त करें। इस वोटिंग वेबसाइट को आपके मोबाइल नंबर की आवश्यकता नहीं है, न्यूज़लेटर भेजने के लिए अपने ईमेल पते को न सहेजें और कभी भी अपनी संपर्क जानकारी को तीसरे पक्ष के विज्ञापनदाताओं को नहीं बेचेंगे !!
+
+         </h4>
+    </div>
+	    <div class="col-lg-4"><img src="{% static 'Vote/e_vote.jpg' %}" class="img-thumbnail" ></div>
+	  </div>
+	  </div>
+	  <div class="row">
+		<div class="col-lg-12" align="center">
+    <h2>बस एक <strong> क्लिक</strong> दूर मतदान</h2>
+		<br>
+        <a href="{% url 'Vote:vote' %}"><button type="button" class="btn1">वोट</button><br><br></a>
+		</div>
+	   </div>
+
+		 <br>
+		 <br>
+
+
+<script>
+$(document).ready(function(){
+    $('[data-toggle="popover"]').popover();
+});
+</script>
+	<div class="container-fluid bg-4">
+  <h2 class="text-center">संपर्क करें</h2>
+  <div class="row row2">
+    <div class="col-sm-5">
+      <p><strong>हमसे संपर्क करें </strong>और हम 24 घंटे के भीतर आप पर वापस आ जाएंगे।</p>
+      <p><span class="glyphicon glyphicon-map-marker"></span> सिक्किम मणिपाल इंस्टीट्यूट ऑफ टेक्नोलॉजी, मैजिटर</p>
+      <p><span class="glyphicon glyphicon-phone"></span> +91 9953918594</p>
+      <p><span class="glyphicon glyphicon-envelope"></span> srivastavaanurag79@gmail.com</p>
+    </div>
+    <div class="col-sm-7">
+      <div class="row row2">
+        <div class="col-sm-6 form-group">
+          <input class="form-control" id="name" name="name" placeholder="Name" type="text" required>
+        </div>
+        <div class="col-sm-6 form-group">
+          <input class="form-control" id="email" name="email" placeholder="Email" type="email" required>
+        </div>
+      </div>
+      <textarea class="form-control" id="comments" name="comments" placeholder="Comment" rows="5"></textarea><br>
+      <div class="row row2">
+        <div class="col-sm-12 form-group">
+          <button class="btn btn-default pull-right" type="submit">Send</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<footer class="container-fluid  bg-4 text-center">
+  <a href="#myPage" title="To Top">
+    <span class="glyphicon glyphicon-chevron-up"></span>
+  </a>
+    <p>&copy; Copyright <strong>Smart Voting System Team</strong>. All Rights Reserved</p>
+  <p>MADE WITH SKILL! NOT LOVE.</a></p>
+</footer>
+
+</div>
+</body>
+</html>

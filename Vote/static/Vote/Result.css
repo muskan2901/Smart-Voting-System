@@ -1,0 +1,30 @@
+.jumbotron {
+    font-family: Montserrat, sans-serif;
+}
+
+.navbar {
+    font-family: Montserrat, sans-serif;
+}
+.row-5{
+	padding-top:50px;
+	padding-bottom:50px;
+	padding-left:30px;
+	padding-right:30px;
+
+}
+.bg-4 {
+    background-color: #2f2f2f;
+    color: #ffffff;
+	margin-top:50px;
+	padding-top: 50px;
+    padding-bottom: 30px;
+}
+.page-header{
+	padding-top: 35px;
+	padding-bottom:20px;
+	color:white;
+	background-color: #2f2f2f;
+}
+.bg-5{
+	background-image   :url("silver.jpeg");
+}

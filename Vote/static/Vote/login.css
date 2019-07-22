@@ -1,0 +1,106 @@
+body
+{
+	text-align:center;
+	padding:0px;
+	font-family: "courier new",sans-serif;
+
+}
+
+.form_div
+{
+	width:450px;
+	height:300px;
+	margin-top:50px;
+	margin-left:400px;
+	padding:10px;
+
+	background-color:white;
+}
+
+.bg-4 {
+    background-color: #2f2f2f;
+    color: #ffffff;
+	margin-top:5px;
+	padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.form_l1
+{
+    margin-top:80px;
+	width:250px;
+	height:10px;
+	margin-left:500px;
+font-size:30px;
+font-weight:bold;
+color:#424242;
+text-decoration:underline;
+}
+
+
+.form_div .form_label1
+{
+	margin:15px;
+	margin-bottom:30px;
+	font-size:18px;
+	color:grey;
+}
+.form_div2 .form_label1
+{
+	margin:15px;
+	margin-bottom:30px;
+	font-size:18px;
+	color:grey;
+}
+.logoq {
+	margin-right: 1em;
+}
+.form_div input[type="text"],input[type="password"]
+{
+background:#f0f0f0;
+width:400px;
+height:40px;
+border-radius:2px;
+font-size:17px;
+padding-left:0px;
+border:none;
+}
+
+.form_div input[type="submit"]
+{
+width:230px;
+height:40px;
+border:none;
+border-radius:2px;
+font-size:17px;
+background-color:#FBCEB1;
+border-bottom:3px solid #616A6B;
+color:white;
+font-weight:bold;
+}
+.form_div padding{
+	font-weight:light;
+}
+
+#backgroundImage{z-index: 1;}
+
+#backgroundImage:before {
+   content: "";
+   position: absolute;
+   z-index: -1;
+   top: 0;
+   bottom: 0;
+   left: 0;
+   right: 0;
+   background-image:     url(aeroplane2.jpeg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    opacity: 0.7;
+    filter:alpha(opacity=50);
+    height:100%;
+    width:100%;
+ }
+
+ .logoq {
+	margin-right: 1em;
+}

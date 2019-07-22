@@ -1,0 +1,28 @@
+body{
+
+	background-image:url("silver.jpg");
+	background-image  :no-repeat;
+	background-size: 100%;
+	font-color:grey;
+
+	font-family: courier new, sans-serif;
+}
+.bg-4 {
+    background-color: #2f2f2f;
+    color: #ffffff;
+	margin-top:50px;
+	padding-top: 50px;
+    padding-bottom: 30px;
+}
+.bg-2{
+
+	background-image   :url("demo.jpg");
+	color:#0c0c00;
+}
+.bg-5{
+	background-image:url("demo.jpg");
+}
+.col-lg-8
+{
+	color:;
+}
